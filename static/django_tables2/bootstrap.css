@@ -1,0 +1,20 @@
+.table-container th.asc:after {
+    content: '\0000a0\0025b2';
+    float: center;
+}
+.table-container th.desc:after {
+    content: '\0000a0\0025bc';
+    float: center;
+}
+
+.tooltip-inner {
+  word-break: break-all;
+}
+
+.concat div {
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,16 @@
+{# database/templates/database/satelite2.html #}
+{% extends "base.html" %}
+{% load django_tables2 %}
+{% load render_table from django_tables2 %}
+{% load bootstrap3 %}
+
+{% block body %}
+<h2>Satelite database with filtering</h2>
+<pre>
+{{ "{%" }} load django_tables2 {{ "%"}" }}
+{{ "{%" }} render_table table {{ "%"}" }}
+</pre>
+
+{% render_table table %}
+
+{% endblock %}
