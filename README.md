@@ -44,3 +44,16 @@ The idea of this step is to format the output files of the `satfindall` script t
 ## Importing the *.csv* files into the PostgreSQL database
 
 For this step, you just have to modify the `FILES` and `SPATH` variables with the directory where the *.csv* files are located so they look like this: `FILES=/home/sat/tools/satfindp/Output/Bacteria/FormatOutput/*` `SPATH=/home/sat/tools/satfindp/Output/Bacteria/FormatOutput/`. The simply type `importall` in the machine command prompt in order to import the files into the table of the database that outputs the data to the **datasat** web application. 
+
+## Update Django project for new content
+
+Once the files have been introduced in the database with the help of the `importall` script, the migrations on the `datasatv2` **Django** project need to be updated. First you need to activate the virtual environment with the repositories needed in order for the project to work. To do this, simply type within the `home` directory in the `sat` machine command prompt. 
+`source environments/datasatv2_env/bin/activate`, you'll now that the environment is activated if `(datasatv2_env)` appears before the command prompt. 
+
+> to deactivate the virtual environment simply type `deactivate` in the command prompt of the `sat` machine. 
+
+Once we've activated the virtual environment all we need to do is navigate to the directory of the django project `/home/sat/projects/datasatv2` and type:
+`python3 manage.py makemigrations` and
+`python3 manage.py migrate`
+
+Once all this is done, please contact the systems administrators to restart the apache server in order to update the information in the web application.
